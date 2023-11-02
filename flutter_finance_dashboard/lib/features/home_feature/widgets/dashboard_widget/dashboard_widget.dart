@@ -62,8 +62,14 @@ class DashboardWidget extends StatelessWidget {
                         const Gap(8),
                         Row(
                           children: [
-                            CircleAvatar(
-                              radius: 14,
+                            ClipOval(
+                              child: CircleAvatar(
+                                backgroundColor: Colors.transparent,
+                                child: Image.asset(
+                                  "assets/my_logo.png",
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
                             ),
                             Gap(8),
                             Column(

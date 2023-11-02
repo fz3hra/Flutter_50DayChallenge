@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_finance_dashboard/core/core_exports.dart';
 import 'package:gap/gap.dart';
+import 'package:intl/intl.dart';
 
 class TransactionWidget extends StatelessWidget {
   const TransactionWidget({super.key});
@@ -8,6 +9,8 @@ class TransactionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    var formatter = NumberFormat('#,###,000');
+    var formatTotalEarned = formatter.format(1500);
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 8,
@@ -48,28 +51,83 @@ class TransactionWidget extends StatelessWidget {
                     value: false,
                   ),
                 ),
-                const DataColumn(
-                  label: Text('To/From'),
+                DataColumn(
+                  label: Text(
+                    'To/From',
+                    style: const TextStyle()
+                        .inter
+                        .bold
+                        .sized(12)
+                        .colored(Colors.grey),
+                  ),
                 ),
-                const DataColumn(
-                  label: Text('Date'),
+                DataColumn(
+                  label: Text(
+                    'Date',
+                    style: const TextStyle()
+                        .inter
+                        .bold
+                        .sized(12)
+                        .colored(Colors.grey),
+                  ),
                 ),
-                const DataColumn(
-                  label: Text('Description'),
+                DataColumn(
+                  label: Text(
+                    'Description',
+                    style: const TextStyle()
+                        .inter
+                        .bold
+                        .sized(12)
+                        .colored(Colors.grey),
+                  ),
                 ),
-                const DataColumn(
-                  label: Text('Amount'),
+                DataColumn(
+                  label: Text(
+                    'Amount',
+                    style: const TextStyle()
+                        .inter
+                        .bold
+                        .sized(12)
+                        .colored(Colors.grey),
+                  ),
                 ),
-                const DataColumn(
-                  label: Text('Status'),
+                DataColumn(
+                  label: Text(
+                    'Status',
+                    style: const TextStyle()
+                        .inter
+                        .bold
+                        .sized(12)
+                        .colored(Colors.grey),
+                  ),
                 ),
-                const DataColumn(
-                  label: Text('Action'),
+                DataColumn(
+                  label: Text(
+                    'Action',
+                    style: const TextStyle()
+                        .inter
+                        .bold
+                        .sized(12)
+                        .colored(Colors.grey),
+                  ),
                 ),
               ],
               rows: [
                 DataRow(
                   cells: [
+                    DataCell(
+                      Row(
+                        children: [
+                          Checkbox(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            onChanged: (bool? value) {},
+                            value: false,
+                          )
+                        ],
+                      ),
+                    ),
                     DataCell(
                       Row(
                         children: [
@@ -82,32 +140,84 @@ class TransactionWidget extends StatelessWidget {
                     ),
                     DataCell(
                       Row(
-                        children: [],
+                        children: [
+                          Text(
+                            '2 october 2023',
+                            style: const TextStyle()
+                                .inter
+                                .bold
+                                .sized(12)
+                                .colored(Colors.grey),
+                          ),
+                        ],
                       ),
                     ),
                     DataCell(
                       Row(
-                        children: [],
+                        children: [
+                          Text(
+                            'Monthly Salary',
+                            style: const TextStyle().inter.bold.sized(12),
+                          ),
+                        ],
                       ),
                     ),
                     DataCell(
                       Row(
-                        children: [],
+                        children: [
+                          Text(
+                            r'$' '$formatTotalEarned',
+                            style: const TextStyle()
+                                .inter
+                                .bold
+                                .sized(12)
+                                .colored(Colors.green),
+                          ),
+                        ],
                       ),
                     ),
                     DataCell(
                       Row(
-                        children: [],
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 6,
+                              horizontal: 12,
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.green),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: Text(
+                              'Success',
+                              style: const TextStyle()
+                                  .inter
+                                  .bold
+                                  .sized(12)
+                                  .colored(Colors.green),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    DataCell(
+                    const DataCell(
                       Row(
-                        children: [],
-                      ),
-                    ),
-                    DataCell(
-                      Row(
-                        children: [],
+                        children: [
+                          Icon(
+                            Icons.attachment_rounded,
+                            size: 20,
+                          ),
+                          Gap(8),
+                          Icon(
+                            Icons.delete_outline_rounded,
+                            size: 20,
+                          ),
+                          Gap(8),
+                          Icon(
+                            Icons.more_horiz_rounded,
+                            size: 20,
+                          ),
+                        ],
                       ),
                     ),
                   ],

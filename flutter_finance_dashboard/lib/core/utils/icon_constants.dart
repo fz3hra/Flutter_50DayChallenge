@@ -4,7 +4,7 @@ class IconConstants {
   static String statisticsIcon = 'assets/statistics_icon.png';
   static String savingsIcon = 'assets/savings_icon.png';
   static String portfolioIcon = 'assets/portfolio_icon.png';
-  static String messageIcon = 'assets/transactions_icon.png';
+  static String messageIcon = 'assets/messages_icon.png';
   static String transactionsIcon = 'assets/transactions_icon.png';
   static String settingsIcon = 'assets/settings_icon.png';
   static String appearancesIcon = 'assets/appearances_icon.png';
